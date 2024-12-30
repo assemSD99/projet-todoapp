@@ -18,6 +18,7 @@ pipeline {
         stage('Build') {
             steps {
                 dir('backend') {
+                    sh 'chmod +x mvnw' // Rendre mvnw exécutable
                     sh './mvnw clean install' // Construire le projet backend
                 }
             }
