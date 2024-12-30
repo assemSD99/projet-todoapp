@@ -17,19 +17,15 @@ pipeline {
         
         stage('Build') {
             steps {
-                script {
-                    // Construire le projet (modifiez cette commande selon votre backend)
-                    sh './mvnw clean install' // Exemple pour un projet Spring Boot
+                dir('backend') {
+                    sh './mvnw clean install' // Construire le projet backend
                 }
             }
         }
 
         stage('Build Docker Image') {
             steps {
-                script {
-                    // Construire une image Docker avec un tag
-                    sh "docker build -t ${DOCKER_IMAGE}:${DOCKER_TAG} ."
-                }
+                sh "docker build -t ${DOCKER_IMAGE}:${DOCKER_TAG} -f backend/Dockerfile backend"
             }
         }
 
