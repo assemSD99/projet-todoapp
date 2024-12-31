@@ -18,7 +18,7 @@ pipeline {
         stage('Build') {
             steps {
                 dir('backend') {
-                    bat 'chmod +x mvnw' // Rendre mvnw exécutable
+                    //bat 'chmod +x mvnw' // Rendre mvnw exécutable
                     bat './mvnw clean install' // Construire le projet backend
                 }
             }
