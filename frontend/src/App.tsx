@@ -11,7 +11,7 @@ function App() {
   // Charger les tâches depuis le backend
   useEffect(() => {
     axios
-      .get('http://localhost:8081/api/todos')
+      .get('http://localhost:8085/api/todos')
       .then((response) => setTodos(response.data))
       .catch((error) => console.error('Erreur lors du chargement des tâches', error));
   }, []);
@@ -27,7 +27,7 @@ function App() {
     if (!todo) return;
 
     try {
-      const response = await axios.put(`http://localhost:8081/api/todos/${id}`, {
+      const response = await axios.put(`http://localhost:8085/api/todos/${id}`, {
         ...todo,
         completed: !todo.completed, // Inverser l'état actuel
       });
@@ -40,7 +40,7 @@ function App() {
   // Supprimer une tâche
   const deleteTodo = async (id: string) => {
     try {
-      await axios.delete(`http://localhost:8081/api/todos/${id}`);
+      await axios.delete(`http://localhost:8085/api/todos/${id}`);
       setTodos(todos.filter((t) => t.id !== id)); // Retirer la tâche supprimée
     } catch (error) {
       console.error('Erreur lors de la suppression de la tâche', error);

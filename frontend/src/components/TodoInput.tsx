@@ -14,7 +14,7 @@ export function TodoInput({ onAdd }: TodoInputProps) {
     e.preventDefault();
     if (title.trim()) {
       try {
-        const response = await axios.post('http://localhost:8081/api/todos', {
+        const response = await axios.post('http://localhost:8085/api/todos', {
           title: title.trim(),
           description: description.trim(),
           completed: false,

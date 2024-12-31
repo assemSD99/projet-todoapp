@@ -18,15 +18,15 @@ pipeline {
         stage('Build') {
             steps {
                 dir('backend') {
-                    sh 'chmod +x mvnw' // Rendre mvnw exécutable
-                    sh './mvnw clean install' // Construire le projet backend
+                    bat 'chmod +x mvnw' // Rendre mvnw exécutable
+                    bat './mvnw clean install' // Construire le projet backend
                 }
             }
         }
 
         stage('Build Docker Image') {
             steps {
-                sh "docker build -t ${DOCKER_IMAGE}:${DOCKER_TAG} -f backend/Dockerfile backend"
+                bat "docker build -t ${DOCKER_IMAGE}:${DOCKER_TAG} -f backend/Dockerfile backend"
             }
         }
 
@@ -34,10 +34,10 @@ pipeline {
             steps {
                 script {
                     // Se connecter à Docker Hub
-                    sh "echo ${DOCKERHUB_CREDENTIALS_PSW} | docker login -u ${DOCKERHUB_CREDENTIALS_USR} --password-stdin"
+                    bat "echo ${DOCKERHUB_CREDENTIALS_PSW} | docker login -u ${DOCKERHUB_CREDENTIALS_USR} --password-stdin"
                     
                     // Pousser l'image Docker vers Docker Hub
-                    sh "docker push ${DOCKER_IMAGE}:${DOCKER_TAG}"
+                    bat "docker push ${DOCKER_IMAGE}:${DOCKER_TAG}"
                 }
             }
         }

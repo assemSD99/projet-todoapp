@@ -13,7 +13,7 @@ public class CorsConfig {
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         CorsConfiguration config = new CorsConfiguration();
         config.setAllowCredentials(true);
-        config.addAllowedOrigin("http://localhost:5174"); // URL du frontend
+        config.addAllowedOrigin("http://localhost:5173"); // URL du frontend
         config.addAllowedHeader("*"); // Autorise tous les en-têtes
         config.addAllowedMethod("*"); // Autorise toutes les méthodes HTTP (GET, POST, PUT, DELETE, etc.)
         source.registerCorsConfiguration("/**", config); // Applique les règles à toutes les routes
