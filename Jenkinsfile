@@ -34,19 +34,16 @@ pipeline {
         // Étape 4 : Pousser l'image Docker vers Docker Hub
         stage('Push Docker Image') {
             steps {
-                // Utilisation sécurisée des credentials pour Docker Hub
-                withCredentials([usernamePassword(credentialsId: 'docker-hub-token', usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD')]) {
-                    script {
-                        // Connexion à Docker Hub
-                        bat """
-                        echo ${DOCKER_PASSWORD} | docker login -u ${DOCKER_USERNAME} --password-stdin
-                        """
-                        // Pousser l'image Docker
-                        bat "docker push ${DOCKER_IMAGE}:${DOCKER_TAG}"
-                    }
+                withCredentials([usernamePassword(credentialsId: 'docker-credentials', usernameVariable: 'DOCKER_USER', passwordVariable: 'DOCKER_PASS')]) {
+                    sh """
+                          docker login docker.io -u "$DOCKER_USER" -p "$DOCKER_PASS"
+                          docker tag ${DOCKER_IMAGE}:latest "$DOCKER_USER"/${DOCKER_IMAGE}:latest
+                          docker push "$DOCKER_USER"/${DOCKER_REPO}
+                    """
                 }
             }
         }
+
     }
 
     // Post-actions : Exécutées après le pipeline
