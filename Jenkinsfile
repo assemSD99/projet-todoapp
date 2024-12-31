@@ -3,9 +3,8 @@ pipeline {
 
     environment {
         // Identifiants pour Docker Hub (remplacez 'docker-hub-token' par l'ID réel de vos credentials Jenkins)
-        DOCKERHUB_CREDENTIALS = credentials('docker-hub-token')
-        DOCKER_IMAGE = "assemsaadaoui/projet" // Nom de l'image Docker (Docker Hub)
-        DOCKER_TAG = "latest" // Tag de l'image Docker (modifiable)
+        DOCKER_IMAGE = "assemsaadaoui/projet" // Nom de l'image Docker
+        DOCKER_TAG = "latest" // Tag de l'image Docker
     }
 
     stages {
@@ -37,10 +36,14 @@ pipeline {
             steps {
                 // Utilisation sécurisée des credentials pour Docker Hub
                 withCredentials([usernamePassword(credentialsId: 'docker-hub-token', usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD')]) {
-                    bat """
-                    echo ${DOCKER_PASSWORD} | docker login -u ${DOCKER_USERNAME} --password-stdin
-                    docker push ${DOCKER_IMAGE}:${DOCKER_TAG}
-                    """
+                    script {
+                        // Connexion à Docker Hub
+                        bat """
+                        echo ${DOCKER_PASSWORD} | docker login -u ${DOCKER_USERNAME} --password-stdin
+                        """
+                        // Pousser l'image Docker
+                        bat "docker push ${DOCKER_IMAGE}:${DOCKER_TAG}"
+                    }
                 }
             }
         }
