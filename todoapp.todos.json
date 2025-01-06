@@ -1,0 +1,140 @@
+[{
+  "_id": {
+    "$oid": "677ae9f7cc65b3dc89ffc76b"
+  },
+  "title": "Apprendre Spring Boot",
+  "description": "Créer une API REST avec MongoDB",
+  "completed": false
+},
+{
+  "_id": {
+    "$oid": "677ae9f7cc65b3dc89ffc76c"
+  },
+  "title": "Configurer MongoDB Compass",
+  "description": "Installer et utiliser MongoDB Compass pour gérer les données",
+  "completed": true
+},
+{
+  "_id": {
+    "$oid": "677ae9f7cc65b3dc89ffc76d"
+  },
+  "title": "Créer une application Todo",
+  "description": "Ajouter des fonctionnalités de gestion des tâches",
+  "completed": false
+},
+{
+  "_id": {
+    "$oid": "677aea21cc65b3dc89ffc76f"
+  },
+  "title": "Finaliser le projet TodoApp",
+  "description": "Ajouter des fonctionnalités avancées comme l'authentification",
+  "completed": false
+},
+{
+  "_id": {
+    "$oid": "677aea21cc65b3dc89ffc770"
+  },
+  "title": "Rédiger la documentation",
+  "description": "Créer un fichier README.md détaillé pour le projet",
+  "completed": true
+},
+{
+  "_id": {
+    "$oid": "677aea21cc65b3dc89ffc771"
+  },
+  "title": "Faire des tests unitaires",
+  "description": "Écrire des tests pour le service TodoService",
+  "completed": false
+},
+{
+  "_id": {
+    "$oid": "677aea21cc65b3dc89ffc772"
+  },
+  "title": "Planifier une réunion",
+  "description": "Discuter des fonctionnalités supplémentaires à implémenter",
+  "completed": true
+},
+{
+  "_id": {
+    "$oid": "677aea21cc65b3dc89ffc773"
+  },
+  "title": "Réviser MongoDB",
+  "description": "Étudier les bonnes pratiques pour travailler avec une base NoSQL",
+  "completed": false
+},
+{
+  "_id": {
+    "$oid": "677aea21cc65b3dc89ffc774"
+  },
+  "title": "Créer un système de tri",
+  "description": "Permettre aux utilisateurs de trier les tâches par statut ou par titre",
+  "completed": false
+},
+{
+  "_id": {
+    "$oid": "677aea21cc65b3dc89ffc775"
+  },
+  "title": "Mettre à jour le style CSS",
+  "description": "Améliorer l'interface utilisateur avec un design moderne",
+  "completed": true
+},
+{
+  "_id": {
+    "$oid": "677aea21cc65b3dc89ffc776"
+  },
+  "title": "Intégrer les notifications",
+  "description": "Notifier les utilisateurs lorsque des tâches sont en retard",
+  "completed": false
+},
+{
+  "_id": {
+    "$oid": "677aea21cc65b3dc89ffc777"
+  },
+  "title": "Créer des rapports",
+  "description": "Ajouter une fonctionnalité pour générer des rapports sur les tâches",
+  "completed": false
+},
+{
+  "_id": {
+    "$oid": "677aea21cc65b3dc89ffc778"
+  },
+  "title": "Optimiser la performance",
+  "description": "Réduire le temps de chargement des données",
+  "completed": false
+},
+{
+  "_id": {
+    "$oid": "676d5e43b1964e4849e50033"
+  },
+  "title": "français",
+  "description": "Apprendre 10 mots dans 5jrs",
+  "completed": true,
+  "_class": "Todo"
+},
+{
+  "_id": {
+    "$oid": "676d7833c24cae093fa5a82b"
+  },
+  "title": "Java",
+  "description": "Répondre à 60 QCM/jr",
+  "completed": true,
+  "_class": "Todo"
+},
+{
+  "_id": {
+    "$oid": "676d788f87159cb435fe6911"
+  },
+  "title": "Test",
+  "description": "Tâche de test",
+  "completed": true,
+  "_class": "Todo"
+},
+{
+  "_id": {
+    "$oid": "677af335a91e6a4b9ab98dfe"
+  },
+  "title": "NoSQL",
+  "description": "ABC",
+  "completed": false,
+  "_class": "Todo"
+}]
